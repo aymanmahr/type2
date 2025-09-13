@@ -68,7 +68,13 @@ function endTest() {
   clearInterval(timer);
   input.disabled = true;
   calculateStats();
+
+  // Wait 2 seconds then auto-restart
+  setTimeout(() => {
+    startTest();
+  }, 2000);
 }
+
 
 function resetTest() {
   clearInterval(timer);
